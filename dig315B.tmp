@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://126lqlnobehl"]
+
+[ext_resource type="Script" path="res://digivolve.gd" id="1_iqbjt"]
+
+[node name="Digivolve" type="Node2D" node_paths=PackedStringArray("current_digimon_texture", "next_digimon_texture", "hide_image_timer")]
+script = ExtResource("1_iqbjt")
+current_digimon_texture = NodePath("CurrentDigimonTexture")
+next_digimon_texture = NodePath("NextDigimonTexture")
+hide_image_timer = NodePath("HideImageTimer")
+
+[node name="CurrentDigimonTexture" type="TextureRect" parent="."]
+offset_left = 361.0
+offset_top = 230.0
+offset_right = 401.0
+offset_bottom = 270.0
+
+[node name="NextDigimonTexture" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HideImageTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="HideImageTimer" to="." method="_on_hide_image_timer_timeout"]

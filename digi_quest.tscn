@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://df5i6ltp0spro"]
+
+[ext_resource type="Script" path="res://digi_quest.gd" id="1_3pqrj"]
+[ext_resource type="PackedScene" uid="uid://1wvgtoikvjrr" path="res://menu_cursor.tscn" id="1_dk0f6"]
+[ext_resource type="Texture2D" uid="uid://kg6pnls0s1dv" path="res://Icons/hand_cursor0000.png" id="2_43hga"]
+[ext_resource type="Script" path="res://menu_item.gd" id="4_7u7be"]
+
+[node name="DigiQuest" type="Node2D" node_paths=PackedStringArray("brave_choice_node", "love_choice_node", "evil_choice_node")]
+position = Vector2(1, 564)
+script = ExtResource("1_3pqrj")
+brave_choice_node = NodePath("DecisionControl/PanelContainer/MarginContainer/VBoxContainer/Brave")
+love_choice_node = NodePath("DecisionControl/PanelContainer/MarginContainer/VBoxContainer/Love")
+evil_choice_node = NodePath("DecisionControl/PanelContainer/MarginContainer/VBoxContainer/Evil")
+
+[node name="DecisionControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MenuCursor" parent="DecisionControl" instance=ExtResource("1_dk0f6")]
+layout_mode = 0
+texture = ExtResource("2_43hga")
+menu_parent_path = NodePath("../PanelContainer/MarginContainer/VBoxContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="DecisionControl"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = -2.0
+offset_right = 82.0
+offset_bottom = 75.0
+
+[node name="MarginContainer" type="MarginContainer" parent="DecisionControl/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DecisionControl/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Brave" type="Label" parent="DecisionControl/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("4_7u7be")
+
+[node name="Love" type="Label" parent="DecisionControl/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("4_7u7be")
+
+[node name="Evil" type="Label" parent="DecisionControl/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("4_7u7be")
