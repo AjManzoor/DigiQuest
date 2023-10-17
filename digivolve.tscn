@@ -12,7 +12,7 @@ hide_image_timer = NodePath("HideImageTimer")
 digivolve_timer = NodePath("DigivolveTimer")
 
 [node name="Digivolve" type="Sprite2D" parent="."]
-position = Vector2(646, 476)
+position = Vector2(651, 457)
 texture = ExtResource("2_g6m2h")
 
 [node name="CurrentDigimonTexture" type="TextureRect" parent="."]
@@ -34,5 +34,21 @@ wait_time = 0.5
 wait_time = 5.0
 one_shot = true
 
+[node name="NextButton" type="Button" parent="."]
+offset_left = 727.0
+offset_top = 535.0
+offset_right = 811.0
+offset_bottom = 561.0
+text = ">>"
+
+[node name="DigivolveLabel" type="RichTextLabel" parent="."]
+offset_left = 396.0
+offset_top = 539.0
+offset_right = 709.0
+offset_bottom = 562.0
+text = "Your digiegg evolved into pullimon"
+fit_content = true
+
 [connection signal="timeout" from="HideImageTimer" to="." method="_on_hide_image_timer_timeout"]
 [connection signal="timeout" from="DigivolveTimer" to="." method="_on_digivolve_timer_timeout"]
+[connection signal="pressed" from="NextButton" to="." method="_on_button_pressed"]
