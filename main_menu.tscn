@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://kg6pnls0s1dv" path="res://Icons/hand_cursor0000.png" id="3_js677"]
 
 [node name="MainMenu" type="Node2D" node_paths=PackedStringArray("start_label_node", "exit_label_node")]
+position = Vector2(557, 305)
 script = ExtResource("1_6yyig")
 start_label_node = NodePath("Control/PanelContainer/MarginContainer/VBoxContainer/Start")
 exit_label_node = NodePath("Control/PanelContainer/MarginContainer/VBoxContainer/Exit")
@@ -31,10 +32,13 @@ layout_mode = 2
 
 [node name="Start" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "Start Game"
 script = ExtResource("2_y0mcc")
 
 [node name="Exit" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "Exit Game
+"
 script = ExtResource("2_y0mcc")
 
 [node name="MenuCursor" parent="." instance=ExtResource("2_sqyxn")]

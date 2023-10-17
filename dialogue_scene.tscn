@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqvgd6duv25w5"]
+
+[ext_resource type="Script" path="res://dialogue_scene.gd" id="1_jhjl8"]
+
+[node name="DialogueScene" type="Node2D" node_paths=PackedStringArray("Name", "Text", "PortaitRect", "TextTimer")]
+position = Vector2(1, 0)
+script = ExtResource("1_jhjl8")
+Name = NodePath("Name")
+Text = NodePath("Text")
+PortaitRect = NodePath("PotraitRect")
+TextTimer = NodePath("TextTimer")
+
+[node name="Text" type="RichTextLabel" parent="."]
+offset_left = 283.0
+offset_top = 188.0
+offset_right = 829.0
+offset_bottom = 258.0
+text = "Text"
+
+[node name="Name" type="RichTextLabel" parent="."]
+offset_left = 283.0
+offset_top = 151.0
+offset_right = 365.0
+offset_bottom = 191.0
+text = "Name"
+
+[node name="TextTimer" type="Timer" parent="."]
+
+[node name="PotraitRect" type="TextureRect" parent="."]
+offset_left = 5.0
+offset_top = 249.0
+offset_right = 45.0
+offset_bottom = 289.0
+
+[node name="DialogueRect" type="TextureRect" parent="."]
+offset_left = 253.0
+offset_top = 183.0
+offset_right = 293.0
+offset_bottom = 223.0

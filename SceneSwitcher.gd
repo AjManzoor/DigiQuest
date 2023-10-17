@@ -16,10 +16,10 @@ func handle_level_changed(current_level_name):
 	var next_level_name : String
 	match current_level_name:
 		"MainMenu":
-			next_level_name = "digi_quest"
+			next_level_name = "decision_scene"
 		"DigiEvo":
 			print("digivlve")
-			next_level_name = "main_menu"
+			next_level_name = "dialogue_scene"
 	transition_to_next_level(next_level_name)
 
 func transition_to_next_level(next_level_name):
